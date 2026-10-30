@@ -19,6 +19,7 @@ body{
 }
 
 .flex-section{
+    animation:fadeIn 1s ease;
     width:90%;
     max-width:1200px;
     margin:60px auto;
@@ -58,8 +59,10 @@ body{
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.02);
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
+   transform:translateY(-10px) scale(1.03);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
 }
 
 
@@ -73,6 +76,7 @@ body{
     max-width:1200px;
     margin:80px auto;
     text-align:center;
+    animation:fadeIn 1.2s ease;
 }
 
 .grid-section h1{
@@ -109,8 +113,17 @@ body{
 }
 
 .grid-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
+      transform:translateY(-10px) scale(1.03);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+.flex-section h1,
+.grid-section h1{
+
+    position:relative;
+
+    display:inline-block;
+
 }
 @media(max-width:768px){
 
@@ -135,5 +148,51 @@ body{
     .grid-container{
         grid-template-columns:1fr;
     }
+
+}
+/* ==========================
+   FADE IN ANIMATION
+========================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.flex-section h1::after,
+.grid-section h1::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-10px;
+
+    width:0;
+
+    height:4px;
+
+    background:#2563eb;
+
+    transition:.4s;
+
+    transform:translateX(-50%);
+
+}
+.flex-section:hover h1::after,
+.grid-section:hover h1::after{
+
+    width:80%;
 
 }
