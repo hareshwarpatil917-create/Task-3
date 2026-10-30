@@ -3,7 +3,15 @@
     padding:0;
     box-sizing:border-box;
 }
+.card h2{
+    margin-bottom:15px;
+    color:#2563eb;
+    transition:.3s;
+}
 
+.card:hover h2{
+    color:#1d4ed8;
+}
 body{
     font-family:Arial, Helvetica, sans-serif;
     background:#f4f7fb;
@@ -50,14 +58,82 @@ body{
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
     box-shadow:0 15px 30px rgba(0,0,0,.15);
 }
 
+
+
+/* ==========================
+   GRID SECTION
+========================== */
+
+.grid-section{
+    width:90%;
+    max-width:1200px;
+    margin:80px auto;
+    text-align:center;
+}
+
+.grid-section h1{
+    font-size:2.2rem;
+    color:#2563eb;
+    margin-bottom:40px;
+}
+
+.grid-container{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.grid-card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.grid-card h3{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.grid-card p{
+    color:#555;
+    line-height:1.6;
+}
+
+.grid-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
 @media(max-width:768px){
 
     .flex-container{
         flex-direction:column;
+    }
+    card{
+        width:100%;
+    }
+
+}
+@media(max-width:900px){
+
+    .grid-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .grid-container{
+        grid-template-columns:1fr;
     }
 
 }
